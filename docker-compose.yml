@@ -1,0 +1,23 @@
+version: '3'
+services:
+    mssql:
+        container_name: mssql
+        restart: always
+        build:
+            context: ./mssql/build
+            dockerfile: Dockerfile
+        environment:
+            ACCEPT_EULA: 'Y'
+            SA_PASSWORD: 'SUPER_ADMIN_PASSWPORD'
+        volumes:
+            - ./mssql/var/data:/var/opt/mssql/data
+            - ./mssql/var/log:/var/opt/mssql/log
+            - ./mssql/var/secrets:/var/opt/mssql/secrets
+        ports:
+            - 1433:1433
+        networks:
+            - mssql-network
+            
+networks:
+    mssql-network:
+        driver: bridge

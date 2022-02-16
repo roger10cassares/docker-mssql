@@ -1,0 +1,3 @@
+mssql/var/data/*
+mssql/var/log/*
+mssql/var/secrets/*
