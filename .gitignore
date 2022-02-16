@@ -1,3 +1,8 @@
 mssql/var/data/*
+mssql/var/data/!README.md
+
 mssql/var/log/*
+mssql/var/log/!README.md
+
 mssql/var/secrets/*
+mssql/var/secrets/!README.md
